@@ -1,0 +1,303 @@
+:root{
+    --ExoGrad:linear-gradient(rgb(0,0,0),rgb(3,70,149) 50%);
+    --Exo2Grad:linear-gradient(rgb(3,70,149),rgb(66,138,240));
+    --IonGrad:linear-gradient(rgb(66,138,240),rgb(119,154,244));
+    --TherGrad:linear-gradient(rgb(119,154,244),rgb(179,163,192));
+    --MesoGrad:linear-gradient(rgb(179,163,192),rgb(235,228,183));
+    --StraGrad:linear-gradient(rgb(235,228,183),rgb(205,188,206));
+    /*
+    TODO 
+    Fix these so that they are like they were or better.
+    */
+    --Stra2Grad:linear-gradient(rgb(205,188,206),rgb(255,108,60));
+    --TroGrad:linear-gradient(rgb(255,108,60),rgb(255,108,10));
+    --Tro2Grad:linear-gradient(rgb(255,108,10),rgb(255,20,40) 2.5%);
+    --Tro3Grad:linear-gradient(rgb(255,20,40),rgb(200,100,100));
+}
+
+/* Animation */
+@keyframes titleFloat{
+    /*TODO*/
+    0%{
+        transform:translate(0,0);
+    }
+    50%{
+       transform:translate(0,5px); 
+    }
+    100%{
+        transform:translate(0,0);
+    }
+}
+@keyframes moonPhase{
+    /*TODO*/
+    0%{
+        content:"\00000a\01F311\FE0E";
+    }
+    12.5%{            
+        content:"\00000a\01F312\FE0E";
+    }
+    25%{        
+        content:"\00000a\01F313\FE0E";
+    }
+    37.5%{      
+        content:"\00000a\01F314\FE0E";
+    }
+    50%{
+        content:"\00000a\1F315\FE0E";
+    }
+    62.5%{
+        content:"\00000a\01F316\FE0E"
+    }
+    75%{
+        content:"\00000a\01F317\FE0E"
+    }
+    87.5%{
+        content:"\00000a\01F318\FE0E"
+    }
+    100%{
+        content:"\00000a\01F311\FE0E"
+    }    
+}
+
+@keyframes balloonFloatX{
+    
+}
+@keyframes balloonFloatY{
+    
+}
+
+aside,
+footer,
+header,
+nav,
+section{
+    /*
+    TODO:
+    */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+[hidden] {
+    /*
+    TODO:
+    */
+  display: none;
+}
+html {
+    /*
+    TODO:
+    */
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+    /*
+    TODO:
+    */
+  margin: 0;
+    color:white;
+    background:rgb(0,100,0);
+}
+.page-wrapper{
+    
+}
+/*INTRO*/
+.intro{ /* Exosphere 1 - from intro to summary*/
+    /*
+    TODO:
+    */
+    background:url(images/stars.png) center repeat,linear-gradient(rgb(0,0,0),rgb(3,70,149) 50%);
+    /*layers with images and gradients at the same time have to be coded into the section. Gradient variable name is --ExoGrad for future reference*/
+}
+.intro h1,h2{ 
+    /*
+    TODO:
+    */
+    text-align:center;
+    animation: titleFloat 4s 0s infinite; 
+}
+.intro h1{
+    /*
+    TODO
+    size
+    top padding
+    */
+    font-size:3em;
+    padding-top:1em;
+}
+.intro h1::after{
+    /*
+    TODO
+    Moon animation - with svg... for browsers that don't support the content animation feature
+    */
+    font-family:"Times New Roman", Times, serif;
+    font-size:3em;
+    white-space:pre;
+    content:"\00000a\01F318\FE0E";
+    animation:moonPhase 1.15s 0.5s infinite;
+}
+
+.circle{
+    background:red;
+    display:inline;
+}
+
+.intro h2{
+    /*
+    TODO:
+        add shooting star animation placeholder
+    */
+    padding-bottom:4em;
+    font-size:2.5em;
+}
+
+/*Begin non-intro sections*/
+
+.explanation,.benefits,.requirements,.participation,footer,.design-selection,.design-archives,.zen-resources{
+    /*
+    TODO:
+        see if there's a more convenient class call to do this
+    */
+    display:-ms-inline-block;
+    display:inline-block;
+}
+
+/*Summary - "A demonstration of what can be ..." */
+.summary{ /* Exosphere 2 */
+    /*
+    TODO:
+    */
+    background:linear-gradient(rgb(3,70,149),rgb(66,138,240));;
+}
+
+/*Preamble - "The Road to Enlightenment... "*/
+.preamble{ /* Ionosphere */
+    /*
+    TODO:
+    */
+    background:linear-gradient(rgb(66,138,240),rgb(119,154,244));
+}
+
+/*Explantion - "So what is this about?"*/
+.explanation{ /* Thermosphere */
+    /*
+    TODO:
+    */
+    background:linear-gradient(rgb(119,154,244),rgb(179,163,192));
+}
+
+/*Participation - "Participation"*/
+.participation{ /* Mesophere */
+    /*
+    TODO:
+    */
+    background:linear-gradient(rgb(179,163,192),rgb(235,228,183));
+}
+
+/*Benefits - "Benefits"*/
+.benefits{ /* Stratosphere */
+    /*
+    TODO:
+    */
+    background:linear-gradient(rgb(235,228,183),rgb(205,188,206));
+}
+
+/*Requirements - Requirements*/
+.requirements { /* Stratosphere 2 */
+    /*
+    TODO:
+    */
+    background:linear-gradient(rgb(205,188,206),rgb(255,108,60));
+}
+
+/*Footer - HTML,CSS,CC,A11y,GH*/
+footer{ /* troposphere 1 - mountains */
+    /*
+    TODO:
+    */
+    text-align:center;
+    background:linear-gradient(rgb(255,108,60),rgb(255,108,10));
+    width:100%;
+    padding-top:10em;
+    overflow:hidden;
+}
+
+footer a{
+    /*
+    TODO
+    - need additional background to fill space. 
+    - Try to fill white space barrier on bottom with color... or make it work.
+    - make individual mountain designs
+    - make text prettier
+    */
+    background:url(images/mount.png) center no-repeat;
+    
+    padding-left:10%;
+    padding-right:10%;
+    padding-top:8em;
+    padding-bottom:20em;
+    margin-left:-5%;
+    margin-right:-5%;
+    color:white;
+    white-space:nowrap;
+    text-decoration:none;
+    font-family:sans-serif;
+}
+
+.sidebar{
+    overflow:hidden;
+}
+
+/*Design-selection, "Select a design"*/
+.design-selection{ /* troposphere 2/3 - clouds or houses*/
+    /*
+    TODO:
+    */
+    float:left;
+    width:33.33%;
+}
+.design-selection,.design-archives,.zen-resources{
+    padding-bottom: 500em;
+  margin-bottom: -500em;
+    background:linear-gradient(rgb(255,108,10),rgb(255,20,40) 2.5%);
+    
+}
+.design-archives{ /*Houses, two houses*/
+    /*
+    TODO:
+        placeholder images
+    */
+    float:left;
+    width:33.33%;
+}
+.zen-resources li, .design-archives li{
+    /*
+    TODO:
+    */
+    display:inline-flex;
+    flex-direction:row;
+    word-break:break-all;
+}
+.zen-resources h3,.design-archives h3{
+    color:black;
+    text-align:center;
+}
+/*Zen resources*/
+.zen-resources{ /*?? Trees maybe */
+    /*
+    TODO:
+    */
+    float:right;
+    width:33.33%;
+}
