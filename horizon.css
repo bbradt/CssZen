@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:500);
+
 :root{
     --ExoGrad:linear-gradient(rgb(0,0,0),rgb(3,70,149) 50%);
     --Exo2Grad:linear-gradient(rgb(3,70,149),rgb(66,138,240));
@@ -13,7 +16,10 @@
     --TroGrad:linear-gradient(rgb(255,108,60),rgb(255,108,10));
     --Tro2Grad:linear-gradient(rgb(255,108,10),rgb(255,20,40) 2.5%);
     --Tro3Grad:linear-gradient(rgb(255,20,40),rgb(200,100,100));
+    --StarGrad:linear-gradient(to bottom,  #1e5799 5px,#fff 2%);
+
 }
+
 
 /* Animation */
 @keyframes titleFloat{
@@ -93,58 +99,110 @@ section{
     */
   display: none;
 }
-html {
-    /*
-    TODO:
-    */
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
 body {
     /*
     TODO:
     */
-  margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
     color:white;
-    background:rgb(0,100,0);
+    display:-ms-inline-block;
+    display:inline-block;
+    font-size: 1.25em;
 }
-.page-wrapper{
-    
+
+body a{
+    color: white;
 }
+
 /*INTRO*/
 .intro{ /* Exosphere 1 - from intro to summary*/
     /*
-    TODO:
+    TODO: Stars Keyframes
     */
-    background:url(images/stars.png) center repeat,linear-gradient(rgb(0,0,0),rgb(3,70,149) 50%);
-    /*layers with images and gradients at the same time have to be coded into the section. Gradient variable name is --ExoGrad for future reference*/
+    background:var(--ExoGrad), var(--StarGrad);
 }
-.intro h1,h2{ 
-    /*
-    TODO:
-    */
+.intro h1, .intro h2{ 
     text-align:center;
     animation: titleFloat 4s 0s infinite; 
-}
-.intro h1{
-    /*
-    TODO
-    size
-    top padding
-    */
-    font-size:3em;
     padding-top:1em;
+    font-family: 'Orbitron', sans-serif;
 }
+
+h1{
+    font-size: 3em;
+}
+
+h2{
+    font-size: 2.5em;
+}
+
+h3{
+
+}
+
+header{
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 2s infinite;
+  background-opacity: 0;
+  position: absolute:
+  top: 0;
+}
+header:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+header:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 0.5s;
+}
+@keyframes twinkle {
+  0% { 
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0) 90%),
+    radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0) 100%),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0) 90%),
+    radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0) 100%),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0) 90%),
+    radial-gradient(1px 1px at 160px 120px, #ddd, rgba(0,0,0,0) 100%);
+  animation-timing-function: ease-in;
+  } 
+  85% {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0) 100%),
+    radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0) 90%),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0) 100%),
+    radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0) 90%),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0) 100%),
+    radial-gradient(1px 1px at 160px 120px, #ddd, rgba(0,0,0,0) 90%);
+    animation-timing-function: linear;
+  }
+  100% {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0) 90%),
+    radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0) 90%),
+    radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0) 90%),
+    radial-gradient(1px 1px at 160px 120px, #ddd, rgba(0,0,0,0));
+  }
+}
+
 .intro h1::after{
-    /*
-    TODO
-    Moon animation - with svg... for browsers that don't support the content animation feature
-    */
-    font-family:"Times New Roman", Times, serif;
     font-size:3em;
+    content:"\A\01F318\FE0E";
     white-space:pre;
-    content:"\00000a\01F318\FE0E";
+    border-color: white;
+    width: 100px;
+    height: 100px;
     animation:moonPhase 1.15s 0.5s infinite;
 }
 
@@ -158,13 +216,14 @@ body {
     TODO:
         add shooting star animation placeholder
     */
-    padding-bottom:4em;
-    font-size:2.5em;
+    padding-bottom:3.5em;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 /*Begin non-intro sections*/
 
-.explanation,.benefits,.requirements,.participation,footer,.design-selection,.design-archives,.zen-resources{
+div, footer{
     /*
     TODO:
         see if there's a more convenient class call to do this
@@ -178,7 +237,8 @@ body {
     /*
     TODO:
     */
-    background:linear-gradient(rgb(3,70,149),rgb(66,138,240));;
+    background:var(--Exo2Grad);
+    text-align: center;
 }
 
 /*Preamble - "The Road to Enlightenment... "*/
@@ -186,7 +246,13 @@ body {
     /*
     TODO:
     */
-    background:linear-gradient(rgb(66,138,240),rgb(119,154,244));
+    background:var(--IonGrad);
+    text-align: left;
+}
+
+.preamble p, .preamble h1, .preamble h2, .preamble h3{
+    width:50%;
+    padding: 0 50px 0 50px;
 }
 
 /*Explantion - "So what is this about?"*/
@@ -194,7 +260,12 @@ body {
     /*
     TODO:
     */
-    background:linear-gradient(rgb(119,154,244),rgb(179,163,192));
+    background: var(--TherGrad);
+    text-align: left;
+}
+
+.explanation h3, .explanation p{
+    padding: 0 50px 0 50%;
 }
 
 /*Participation - "Participation"*/
@@ -202,7 +273,12 @@ body {
     /*
     TODO:
     */
-    background:linear-gradient(rgb(179,163,192),rgb(235,228,183));
+    background: var(--MesoGrad);
+}
+
+.participation p, .participation h3{
+    padding: 0 50px 0 50px;
+    width: 50%;
 }
 
 /*Benefits - "Benefits"*/
@@ -210,7 +286,11 @@ body {
     /*
     TODO:
     */
-    background:linear-gradient(rgb(235,228,183),rgb(205,188,206));
+    background:var(--StraGrad);
+}
+
+.benefits p, .benefits h3{
+    padding: 0 50px 0 50%;
 }
 
 /*Requirements - Requirements*/
@@ -218,7 +298,12 @@ body {
     /*
     TODO:
     */
-    background:linear-gradient(rgb(205,188,206),rgb(255,108,60));
+    background:var(--Stra2Grad);
+}
+
+.requirements p, .requirements h3{
+    padding: 0 50px 0 50px;
+    width: 50%;
 }
 
 /*Footer - HTML,CSS,CC,A11y,GH*/
@@ -240,17 +325,8 @@ footer a{
     - Try to fill white space barrier on bottom with color... or make it work.
     - make individual mountain designs
     - make text prettier
-    */
-    background:url(images/mount.png) center no-repeat;
-    
-    padding-left:10%;
-    padding-right:10%;
-    padding-top:8em;
-    padding-bottom:20em;
-    margin-left:-5%;
-    margin-right:-5%;
+    */ 
     color:white;
-    white-space:nowrap;
     text-decoration:none;
     font-family:sans-serif;
 }
@@ -285,12 +361,18 @@ footer a{
     /*
     TODO:
     */
+    color: white;
     display:inline-flex;
     flex-direction:row;
     word-break:break-all;
 }
+
+.design-selection li a, .zen-resources li a, .design-archives li a{
+   color: white;
+}
+
 .zen-resources h3,.design-archives h3{
-    color:black;
+    color: white;
     text-align:center;
 }
 /*Zen resources*/
